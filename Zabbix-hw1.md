@@ -70,3 +70,9 @@
 
 4. В мой docker-compose.yaml я добавил 2 агента, от которых мы и получаем данные в zabbix
 ![image](https://github.com/Dendroit/hometasks/assets/155379046/f3523a92-f638-4e3c-97b5-5b2c44aee8f8)
+
+Как пример работы. Вывел по 2 графика с каждого контейнера (CPU и MEM). отсутствие данных в квадратах, это отключение контейнера. 
+
+PS зелёный - zabbix-agent-1, красный - zabbix-agent-2
+![tempsnip](https://github.com/Dendroit/hometasks/assets/155379046/df15b7e8-8d8f-443a-8cef-b7fa51c5330d)
+
