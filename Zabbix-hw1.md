@@ -35,3 +35,38 @@
 - контейнер zabbix-server - соответственно сам сервер разворачиваемый по оригинальному образу под docker, с настройками для работы c postgres 
 - контейнер zabbix-web - zabbix-web-nginx-pqsql так же оригинальный образ nginx(в лекции было сказано, что не важно apache или nginx) для zabbix'а и работой с базой postgres с пробросом порта 8080, по которому мы и открываем веб интерфейс
 - ну и в конце - базовые настроки сети для контейнеров
+
+---
+
+### Задание 2 
+
+Установите Zabbix Agent на два хоста.
+
+#### Процесс выполнения
+1. Выполняя ДЗ, сверяйтесь с процессом отражённым в записи лекции.
+2. Установите Zabbix Agent на 2 вирт.машины, одной из них может быть ваш Zabbix Server.
+3. Добавьте Zabbix Server в список разрешенных серверов ваших Zabbix Agentов.
+4. Добавьте Zabbix Agentов в раздел Configuration > Hosts вашего Zabbix Servera.
+5. Проверьте, что в разделе Latest Data начали появляться данные с добавленных агентов.
+
+#### Требования к результаты 
+1. Приложите в файл README.md скриншот раздела Configuration > Hosts, где видно, что агенты подключены к серверу
+2. Приложите в файл README.md скриншот лога zabbix agent, где видно, что он работает с сервером
+3. Приложите в файл README.md скриншот раздела Monitoring > Latest data для обоих хостов, где видны поступающие от агентов данные.
+4. Приложите в файл README.md текст использованных команд в GitHub
+
+---
+
+### Решениие 2
+
+1. Скриншот Hosts с 2 агентами на 2х контейнерах
+![image](https://github.com/Dendroit/hometasks/assets/155379046/ecfba8ba-a33c-4c65-af2a-e61b1b6aa70b)
+
+2. Т.к. у меня всё крутится в контейнерах вот лог с одного zabbix-agent-1
+![image](https://github.com/Dendroit/hometasks/assets/155379046/eae03497-8e9d-4aee-8426-e985fd5f9275)
+
+3. Latest data
+![image](https://github.com/Dendroit/hometasks/assets/155379046/b0a346d9-2f33-47ed-bf0c-be10ad09050b)
+
+4. В мой docker-compose.yaml я добавил 2 агента, от которых мы и получаем данные в zabbix
+![image](https://github.com/Dendroit/hometasks/assets/155379046/f3523a92-f638-4e3c-97b5-5b2c44aee8f8)
